@@ -1,31 +1,49 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+# News Feed Simulator
 
-* [/iosApp](./iosApp/iosApp) contains an iOS application. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+**Nama:** Frichintia Niken Gita Natasyah
+**NIM:** 124140106
+**Kelas:** Pengembangan Aplikasi Mobile RB
 
-* [/shared](./shared/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./shared/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./shared/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./shared/src/jvmMain/kotlin)
-    folder is the appropriate location.
+## Deskripsi
 
-### Running the apps
+News Feed Simulator adalah aplikasi sederhana yang mensimulasikan feed berita menggunakan Kotlin dan Jetpack Compose, Berita baru akan muncul secara otomatis setiap 2 detik dan user dapat memilih kategori berita yang ingin ditampilkan
 
-Use the run configurations provided by the run widget in your IDE's toolbar. You can also use these commands and options:
+## Fitur
 
-- Android app: `./gradlew :androidApp:assembleDebug`
-- iOS app: open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+* **Simulasi Berita**
+  Berita dibuat secara asynchronous menggunakan `Flow` dan `delay(2000)` sehingga berita baru muncul setiap 2 detik.
 
-### Running tests
+* **Filter Kategori**
+  Berita dapat difilter berdasarkan kategori menggunakan `.filter {}`. Kategori yang tersedia yaitu Teknologi, Olahraga, Politik, dan Hiburan.
 
-Use the run button in your IDE's editor gutter, or run tests using Gradle tasks:
+* **Transformasi Data**
+  Data berita diubah menggunakan `.map {}` sebelum ditampilkan pada feed.
 
-- Android tests: `./gradlew :shared:testAndroidHostTest`
-- iOS tests: `./gradlew :shared:iosSimulatorArm64Test`
+* **StateFlow Counter**
+  `MutableStateFlow` digunakan untuk menyimpan jumlah berita yang sudah dibaca dan memperbarui tampilannya secara real-time.
 
----
+* **Detail Berita**
+  Saat berita dipilih, aplikasi mengambil detail berita secara asynchronous menggunakan `coroutineScope`, `async`, `Dispatchers.IO`, dan `delay(1000)`.
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+* **Jetpack Compose UI**
+  Tampilan aplikasi dibuat menggunakan Jetpack Compose dengan `LazyColumn`, `Card`, `FilterChip`, dan `MaterialTheme`.
+
+## Cara Menjalankan
+
+Clone repository:
+
+```bash
+git clone https://github.com/yoursky12/NewsFeedSimulator_PAM2.git
+```
+
+Kemudian:
+
+1. Buka project menggunakan Android Studio.
+2. Pilih **Trust Project** jika muncul.
+3. Tunggu proses **Gradle Sync** selesai.
+4. Pastikan **Gradle JDK** menggunakan JDK 21.
+5. Pilih emulator atau perangkat Android.
+6. Jalankan aplikasi dengan tombol **Run ▶** atau tekan `Shift + F10`.
+
+## Screenshot
+<img width="179" height="349" alt="image" src="https://github.com/user-attachments/assets/f5303544-db6b-42ac-b79a-fda1e5d6ca0f" />
