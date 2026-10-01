@@ -1,10 +1,10 @@
-# 📱 Pemrograman Aplikasi Mobile (PAM)
+# Pemrograman Aplikasi Mobile (PAM)
 
 berisi pengumpulan **Tugas Praktikum** mingguan untuk mata kuliah **Pemrograman Aplikasi Mobile (PAM)**.
 
 ---
 
-## 📁 Struktur Repository
+## Struktur Repository
 
 ```text
 HANDSON.PAM/
